@@ -131,9 +131,19 @@
             <div class="absolute top-1/2 -translate-y-1/2 right-0 translate-x-full w-8 h-1 bg-yellow-300 z-0"></div>
           </div>
           
+          <!-- 四不壞淨 & 六念 (包含影片圖示) -->
           <div class="relative h-32 flex items-center">
             <div class="absolute top-1/2 -translate-y-1/2 right-0 translate-x-full w-8 h-1 bg-red-300 z-0"></div>
-            <button onclick="openModal('四不壞淨')" class="relative z-10 w-full h-full p-4 rounded-xl border-2 bg-red-50 border-red-200 text-red-900 font-bold hover:bg-red-100 transition-all">四不壞淨</button>
+            <div class="relative z-10 w-full h-full rounded-xl border-2 bg-red-50 border-red-200 overflow-hidden flex flex-col shadow-sm">
+              <button onclick="openModal('四不壞淨')" class="flex-1 w-full hover:bg-red-100 transition-all text-red-900 font-bold flex items-center justify-center gap-1">
+                四不壞淨
+                <i data-lucide="play-circle" class="w-4 h-4"></i>
+              </button>
+              <button onclick="openModal('六念')" class="flex-1 w-full hover:bg-red-100 transition-all text-red-800 font-bold flex items-center justify-center text-sm gap-1">
+                六念
+                <i data-lucide="play-circle" class="w-3 h-3"></i>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -178,7 +188,7 @@
               正語, 正業, 正命
             </button>
           </div>
-          <!-- 四正勤 & 十善業道 (包含影片圖示) -->
+          <!-- 四正勤 & 十善業道 -->
           <div class="relative h-32 flex items-center">
             <div class="absolute top-1/2 -translate-y-1/2 right-0 translate-x-full w-8 h-1 bg-emerald-300 z-0"></div>
             <div class="relative z-10 w-full h-full rounded-xl border-2 bg-emerald-50 border-emerald-200 overflow-hidden flex flex-col shadow-sm">
@@ -292,7 +302,7 @@
         療癒系佛法繪本影片
       </h2>
       
-      <!-- 6支影片，分為2排，每排3支 -->
+      <!-- 影片列表：動態 Grid 佈局 -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- 影片 1: 四聖諦篇 -->
@@ -410,7 +420,7 @@
            <p class="text-slate-500 text-sm">結合八正道與十善業道的修行動畫，指引我們如何在生活中實踐，斷惡修善，邁向解脫。</p>
         </div>
 
-        <!-- 影片 6: 四向四果與十結篇 (新增) -->
+        <!-- 影片 6: 四向四果與十結篇 -->
         <div class="space-y-3 group">
            <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100">
              <iframe 
@@ -431,6 +441,29 @@
              療癒系佛法繪本 - 四向四果與十結
            </h3>
            <p class="text-slate-500 text-sm">了解涅槃的真實意涵，以及如何透過「減法工程」斬斷十條心裡鎖鏈，邁向解脫境界。</p>
+        </div>
+
+        <!-- 影片 7: 四不壞淨與六念篇 (新增) -->
+        <div class="space-y-3 group">
+           <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100">
+             <iframe 
+               width="100%" 
+               height="100%" 
+               src="https://www.youtube.com/embed/jCXyluhcEb0" 
+               title="療癒系佛法繪本-四不壞淨與六念篇" 
+               frameborder="0" 
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+               referrerpolicy="strict-origin-when-cross-origin"
+               allowfullscreen
+               loading="lazy"
+               class="w-full h-full"
+             >
+             </iframe>
+           </div>
+           <h3 class="font-bold text-lg text-slate-700 group-hover:text-indigo-600 transition-colors">
+             療癒系佛法繪本 - 四不壞淨與六念
+           </h3>
+           <p class="text-slate-500 text-sm">了解四不壞淨如何成為生命中最堅固的防護罩，並學習六念法門，在風浪中找回內心的平靜。</p>
         </div>
 
       </div>
@@ -632,7 +665,41 @@
         title: "四不壞淨",
         content: `
           <div class="space-y-3">
-            <p>初果聖者所證得的四種不可動搖的信心與功德：佛不壞淨、法不壞淨、僧不壞淨、聖戒成就。</p>
+            <p>初果聖者所證得的四種不可動搖的信心與功德：<strong>佛不壞淨、法不壞淨、僧不壞淨、聖戒成就</strong>。這是內心最強大的防護罩，不再墮入惡道。</p>
+            
+            <a href="https://youtu.be/jCXyluhcEb0" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-4 rounded-xl bg-red-50 border border-red-100 hover:bg-red-100 transition-colors group mt-4">
+              <div class="flex items-center gap-2 text-red-700 font-bold">
+                <i data-lucide="youtube" class="w-6 h-6 text-red-600"></i>
+                <span>療癒系佛法繪本：四不壞淨與六念</span>
+                <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+              </div>
+              <p class="text-sm text-red-800/80 pl-8">
+                觀看影片：了解這四股比全世界財富與權力還要強大的力量，如何讓我們獲得真正的安心與自由。
+              </p>
+            </a>
+          </div>`
+      },
+      "六念": {
+        title: "六念",
+        content: `
+          <div class="space-y-3">
+            <p>當面臨病痛、恐懼或不安的風浪時，能幫助我們找回平靜的六種憶念法門：</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>念佛、念法、念僧、念戒：</strong>將心轉向已擁有的「四不壞淨」寶藏，重新校準散亂的心。</li>
+              <li><strong>念施：</strong>回憶自己曾經的布施與分享，讓心變得開闊。</li>
+              <li><strong>念天：</strong>思惟因善行而發光的高尚生命，提醒自己也擁有同樣的潛質。</li>
+            </ul>
+            
+            <a href="https://youtu.be/jCXyluhcEb0" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-4 rounded-xl bg-red-50 border border-red-100 hover:bg-red-100 transition-colors group mt-4">
+              <div class="flex items-center gap-2 text-red-700 font-bold">
+                <i data-lucide="youtube" class="w-6 h-6 text-red-600"></i>
+                <span>療癒系佛法繪本：四不壞淨與六念</span>
+                <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+              </div>
+              <p class="text-sm text-red-800/80 pl-8">
+                觀看影片：學習如何透過六念法門，在逆境中超越身體的痛，找回內心的安定。
+              </p>
+            </a>
           </div>`
       },
       "四念處": {
@@ -762,10 +829,10 @@
           </div>`
       },
       "四向四果": {
-        title: "四向四果 (Cattāri Phala)",
+        title: "四向四果 (四雙八輩)",
         content: `
           <div class="space-y-4">
-            <p>聲聞修行的證悟階位，代表煩惱的斷盡程度與解脫的進程。</p>
+            <p>聲聞修行的證悟階位，代表煩惱的斷盡程度與解脫的進程。又稱為<strong>「四雙八輩」</strong>，指邁向果位的階段（向）與證得果位的階段（果），共分為四對（雙）、八種聖者階位（八輩）。</p>
             <ul class="list-disc pl-5 space-y-2">
               <li><strong>須陀洹 (Stream-enterer)：</strong>入流。斷除三結（身見、戒禁取、疑），不墮惡道，最多七次往返人間天上即入涅槃。</li>
               <li><strong>斯陀含 (Once-returner)：</strong>一來。三結斷，貪嗔癡薄弱。人間天上往返一次。</li>
@@ -780,7 +847,7 @@
                 <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
               </div>
               <p class="text-sm text-sky-800/80 pl-8">
-                觀看影片：了解涅槃的真實意涵，以及如何透過「減法工程」斬斷十結，邁向四向四果的解脫境界。
+                觀看影片：了解涅槃的真實意涵，以及如何透過「減法工程」斬斷十結，邁向四向四果（四雙八輩）的解脫境界。
               </p>
             </a>
           </div>`
