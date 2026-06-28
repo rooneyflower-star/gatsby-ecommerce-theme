@@ -53,8 +53,8 @@
     </div>
   </header>
 
-  <!-- 主內容區：心智圖 -->
-  <main class="p-8 pb-12 overflow-x-auto flex justify-center border-b border-slate-200">
+  <!-- 主內容區：心智圖 (增加 pb-32 確保底部有足夠空間容納括號) -->
+  <main class="p-8 pb-32 overflow-x-auto flex justify-center border-b border-slate-200">
     <div class="relative min-w-[1300px] max-w-8xl mx-auto pl-16">
       
       <!-- SVG 連接線層 (背景) -->
@@ -163,14 +163,25 @@
             <div class="absolute top-1/2 -translate-y-1/2 right-0 translate-x-full w-8 h-1 bg-orange-300 z-0"></div>
             <button onclick="openModal('正念')" class="relative z-10 w-full h-full p-4 rounded-xl border-2 bg-orange-50 border-orange-200 text-orange-900 font-bold hover:bg-orange-100 transition-all">正念</button>
           </div>
+          <!-- 四念處 & 四顛倒 -->
           <div class="relative h-32 flex items-center">
             <div class="absolute top-1/2 -translate-y-1/2 right-0 translate-x-full w-8 h-1 bg-orange-300 z-0"></div>
-            <button onclick="openModal('四念處')" class="relative z-10 w-full h-full p-4 rounded-xl border-2 bg-orange-50 border-orange-200 text-orange-900 font-bold hover:bg-orange-100 transition-all">四念處</button>
+            <div class="relative z-10 w-full h-full rounded-xl border-2 bg-orange-50 border-orange-200 overflow-hidden flex flex-col shadow-sm">
+              <button onclick="openModal('四念處')" class="flex-1 w-full hover:bg-orange-100 transition-all text-orange-900 font-bold flex items-center justify-center gap-1">
+                四念處
+                <i data-lucide="play-circle" class="w-4 h-4"></i>
+              </button>
+              <button onclick="openModal('四顛倒')" class="flex-1 w-full hover:bg-orange-100 transition-all text-orange-800 font-bold flex items-center justify-center text-sm gap-1">
+                對治四顛倒
+                <i data-lucide="play-circle" class="w-3 h-3"></i>
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- Column 3: 勤 (黃綠漸層) -->
-        <div class="flex-1 flex flex-col gap-8 relative">
+        <!-- 加入 z-30 確保底部的跨欄括號不會被右側欄位遮擋 -->
+        <div class="flex-1 flex flex-col gap-8 relative z-30">
           <div class="absolute left-1/2 -translate-x-1/2 top-8 bottom-8 w-1 bg-gradient-to-b from-yellow-300 to-emerald-300 -z-0"></div>
           
           <div class="relative h-32 flex items-center">
@@ -188,12 +199,13 @@
               正語, 正業, 正命
             </button>
           </div>
-          <!-- 四正勤 & 十善業道 -->
+          <!-- 四正勤 & 十善業道 (移除中間橫線，加上影片圖示) -->
           <div class="relative h-32 flex items-center">
             <div class="absolute top-1/2 -translate-y-1/2 right-0 translate-x-full w-8 h-1 bg-emerald-300 z-0"></div>
             <div class="relative z-10 w-full h-full rounded-xl border-2 bg-emerald-50 border-emerald-200 overflow-hidden flex flex-col shadow-sm">
-              <button onclick="openModal('四正勤')" class="flex-1 w-full hover:bg-emerald-100 transition-all text-emerald-900 font-bold flex items-center justify-center border-b-0">
+              <button onclick="openModal('四正勤')" class="flex-1 w-full hover:bg-emerald-100 transition-all text-emerald-900 font-bold flex items-center justify-center gap-1">
                 四正勤
+                <i data-lucide="play-circle" class="w-4 h-4"></i>
               </button>
               <button onclick="openModal('十善業道')" class="flex-1 w-full hover:bg-emerald-100 transition-all text-emerald-800 font-bold flex items-center justify-center text-sm gap-1">
                 十善業道
@@ -201,6 +213,32 @@
               </button>
             </div>
           </div>
+
+          <!-- NEW: 止觀雙修 底部括號與標籤 (精準跨越 Col 2, 3, 4) - 改為紫色系 -->
+          <!-- 使用 -mt-[2px] 讓括號與上方三個格子無縫完美相接，並用 w-[calc(200%+4rem)] 精準對齊左右兩欄的中心點 -->
+          <div class="absolute top-full -mt-[2px] left-1/2 -translate-x-1/2 w-[calc(200%+4rem)] pointer-events-none flex flex-col items-center -z-10">
+            <!-- 重新繪製的ㄇ字型大括號 (加粗並增加中間指引線) -->
+            <div class="w-full relative h-6">
+              <!-- 左半邊連線 (精準向上連接「四念處」正中心) -->
+              <div class="absolute top-0 left-0 w-[50.2%] h-full border-b-[3px] border-l-[3px] border-indigo-400 rounded-bl-xl"></div>
+              <!-- 右半邊連線 (精準向上連接「四禪」正中心) -->
+              <div class="absolute top-0 right-0 w-[50.2%] h-full border-b-[3px] border-r-[3px] border-indigo-400 rounded-br-xl"></div>
+              <!-- 中間向上的連線 (精準向上連接「四正勤」正中心) -->
+              <div class="absolute top-0 left-1/2 w-[3px] h-full bg-indigo-400 -translate-x-1/2"></div>
+              <!-- 中間向下的短指引線 (向下連接按鈕) -->
+              <div class="absolute top-full left-1/2 w-[3px] h-3 bg-indigo-400 -translate-x-1/2"></div>
+            </div>
+            <!-- 點擊按鈕 (紫色系，雙行獨立點選設計) -->
+            <div class="pointer-events-auto mt-3 bg-indigo-50 border-[3px] border-indigo-400 shadow-md rounded-xl overflow-hidden flex flex-col hover:border-indigo-500 hover:scale-105 transition-all">
+              <button onclick="openModal('止觀雙修')" class="px-6 py-2 pb-1.5 text-indigo-900 text-sm font-bold hover:bg-indigo-100 transition-colors flex items-center justify-center gap-1.5 tracking-wider">
+                止觀雙修
+              </button>
+              <button onclick="openModal('五蓋')" class="px-6 py-1.5 pt-1 text-xs text-slate-500 font-bold hover:bg-indigo-100 hover:text-indigo-800 transition-colors tracking-normal flex items-center justify-center">
+                對治五蓋
+              </button>
+            </div>
+          </div>
+
         </div>
 
         <!-- Column 4: 定 (綠色系) -->
@@ -221,7 +259,7 @@
           </div>
           <div class="relative h-32 flex items-center">
             <div class="absolute top-1/2 -translate-y-1/2 right-0 translate-x-full w-8 h-1 bg-emerald-300 z-0"></div>
-            <button onclick="openModal('四禪四如意足')" class="relative z-10 w-full h-full p-4 rounded-xl border-2 bg-emerald-50 border-emerald-200 text-emerald-900 font-bold hover:bg-emerald-100 transition-all">四禪<br>四如意足</button>
+            <button onclick="openModal('四禪四如意足')" class="relative z-10 w-full h-full p-4 rounded-xl border-2 bg-emerald-50 border-emerald-200 text-emerald-900 font-bold hover:bg-emerald-100 transition-all shadow-sm">四禪<br>四如意足</button>
           </div>
         </div>
 
@@ -294,7 +332,7 @@
     </div>
   </main>
 
-  <!-- NEW: 影片大合集專區 (三欄式佈局) -->
+  <!-- 影片大合集專區 -->
   <section class="bg-white py-12 px-6 border-t border-slate-200">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-2">
@@ -443,7 +481,7 @@
            <p class="text-slate-500 text-sm">了解涅槃的真實意涵，以及如何透過「減法工程」斬斷十條心裡鎖鏈，邁向解脫境界。</p>
         </div>
 
-        <!-- 影片 7: 四不壞淨與六念篇 (新增) -->
+        <!-- 影片 7: 四不壞淨與六念篇 -->
         <div class="space-y-3 group">
            <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100">
              <iframe 
@@ -464,6 +502,29 @@
              療癒系佛法繪本 - 四不壞淨與六念
            </h3>
            <p class="text-slate-500 text-sm">了解四不壞淨如何成為生命中最堅固的防護罩，並學習六念法門，在風浪中找回內心的平靜。</p>
+        </div>
+
+        <!-- 影片 8: 四念處與四正勤篇 -->
+        <div class="space-y-3 group">
+           <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100">
+             <iframe 
+               width="100%" 
+               height="100%" 
+               src="https://www.youtube.com/embed/EQjXvgt5OOA" 
+               title="療癒系佛法繪本-四念處與四正勤篇" 
+               frameborder="0" 
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+               referrerpolicy="strict-origin-when-cross-origin"
+               allowfullscreen
+               loading="lazy"
+               class="w-full h-full"
+             >
+             </iframe>
+           </div>
+           <h3 class="font-bold text-lg text-slate-700 group-hover:text-indigo-600 transition-colors">
+             療癒系佛法繪本 - 四念處與四正勤
+           </h3>
+           <p class="text-slate-500 text-sm">學習如何透過四念處的覺察打破四顛倒的錯覺，並運用四正勤的精進動力，在生活中落實止觀雙修。</p>
         </div>
 
       </div>
@@ -586,7 +647,7 @@
           </div>`
       },
       "定根定力": {
-        title: "定根、定力 (Samādhi)",
+        title: "定根定力 (Samādhi)",
         content: `
           <div class="space-y-4">
             <p><strong>定義：</strong>心專注於單一境界，不散亂。</p>
@@ -707,6 +768,35 @@
         content: `
           <div class="space-y-3">
             <p>培養正念的四個觀察對象：身念處、受念處、心念處、法念處。</p>
+            <a href="https://youtu.be/EQjXvgt5OOA" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-4 rounded-xl bg-orange-50 border border-orange-100 hover:bg-orange-100 transition-colors group mt-4">
+              <div class="flex items-center gap-2 text-orange-700 font-bold">
+                <i data-lucide="youtube" class="w-6 h-6 text-red-600"></i>
+                <span>療癒系佛法繪本：四念處與四正勤</span>
+                <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+              </div>
+              <p class="text-sm text-orange-800/80 pl-8">
+                觀看影片：學習如何在生活中實踐身、受、心、法的觀察，並結合四正勤的動力。
+              </p>
+            </a>
+          </div>`
+      },
+      "四顛倒": {
+        title: "四顛倒 (Vipallāsa)",
+        content: `
+          <div class="space-y-3">
+            <p><strong>定義：</strong>眾生對世間真相產生的四種根本錯覺：將無常視為「常」、將苦視為「樂」、將無我視為「我」、將不淨視為「淨」。</p>
+            <p>修習「四念處」正是為了對治這四種顛倒：觀身不淨、觀受是苦、觀心無常、觀法無我。</p>
+            
+            <a href="https://youtu.be/EQjXvgt5OOA" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-4 rounded-xl bg-orange-50 border border-orange-100 hover:bg-orange-100 transition-colors group mt-4">
+              <div class="flex items-center gap-2 text-orange-700 font-bold">
+                <i data-lucide="youtube" class="w-6 h-6 text-red-600"></i>
+                <span>療癒系佛法繪本：四念處與四正勤</span>
+                <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+              </div>
+              <p class="text-sm text-orange-800/80 pl-8">
+                觀看影片：了解這四種錯覺如何蒙蔽我們的心智，並學習用四念處來破解它們。
+              </p>
+            </a>
           </div>`
       },
       "四正勤": {
@@ -714,6 +804,17 @@
         content: `
           <div class="space-y-3">
             <p>四種正確的努力方向：已生惡令斷、未生惡令不生、未生善令生、已生善令增長。</p>
+            
+            <a href="https://youtu.be/EQjXvgt5OOA" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-4 rounded-xl bg-emerald-50 border border-emerald-100 hover:bg-emerald-100 transition-colors group mt-4">
+              <div class="flex items-center gap-2 text-emerald-700 font-bold">
+                <i data-lucide="youtube" class="w-6 h-6 text-red-600"></i>
+                <span>療癒系佛法繪本：四念處與四正勤</span>
+                <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+              </div>
+              <p class="text-sm text-emerald-800/80 pl-8">
+                觀看影片：了解如何將四正勤的動力，應用在四念處的覺察之中，斷惡修善。
+              </p>
+            </a>
           </div>`
       },
       "十善業道": {
@@ -745,6 +846,31 @@
           <div class="space-y-3">
             <p><strong>四禪：</strong>色界定的一至四禪，代表定力的深淺層次。</p>
             <p><strong>四如意足：</strong>欲、勤、心、觀。獲得成就的四種基礎力量。</p>
+          </div>`
+      },
+      "止觀雙修": {
+        title: "止觀雙修 (Samatha & Vipassanā)",
+        content: `
+          <div class="space-y-3">
+            <p><strong>止 (Samatha)：</strong>即「禪定」（如四禪），能讓心念平靜、專注於一境，暫時伏斷煩惱的干擾。</p>
+            <p><strong>觀 (Vipassanā)：</strong>即「智慧的覺照」（如四念處），能如實觀察身心無常、苦、無我的本質，徹底斷除煩惱的根源。</p>
+            <p><strong>對治五蓋：</strong>在修習止觀的過程中，能有效對治並降伏貪欲、瞋恚、惛沈睡眠、掉舉惡作、疑等「五蓋」，使心境恢復清淨明朗。</p>
+            <p><strong>定慧等持：</strong>佛法強調「止觀雙修」。誠如《雜阿含經》等諸多經典所提示，<strong>四正勤</strong>提供了不懈的精進動力，配合<strong>四禪</strong>的定力與<strong>四念處</strong>的觀智，這三者在底層相互支撐，正是通往解脫（涅槃）的不二法門。</p>
+          </div>`
+      },
+      "五蓋": {
+        title: "五蓋 (Pañcanīvaraṇāni)",
+        content: `
+          <div class="space-y-3">
+            <p>「蓋」意指覆蓋、阻礙。這五種煩惱會像烏雲般覆蓋我們的心識，阻礙禪定與真實智慧的生起，是修道上必須克服的主要關卡：</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>貪欲蓋 (Kāmacchanda)：</strong>對世間感官欲樂（色、聲、香、味、觸）的強烈渴求。佛陀常教導以「不淨觀」來對治。</li>
+              <li><strong>瞋恚蓋 (Vyāpāda)：</strong>憤怒、怨恨、不滿的情緒，會令心如沸水般翻騰。常用「慈悲觀」來對治。</li>
+              <li><strong>惛沈睡眠蓋 (Thīnamiddha)：</strong>心智昏暗、沉重、提不起勁或嗜睡。可用「光明想」或起身「經行（散步）」來對治。</li>
+              <li><strong>掉舉惡作蓋 (Uddhaccakukkucca)：</strong>心神浮躁不安、無法專注（掉舉），以及對過去行為產生無益的懊悔（惡作）。常用「安那般那念（觀呼吸）」來使心平靜。</li>
+              <li><strong>疑蓋 (Vicikicchā)：</strong>對佛、法、僧、戒律或自己的修行產生猶豫不決與懷疑。常用「擇法覺分」與深入經教來釐清。</li>
+            </ul>
+            <p>當透過「止觀雙修」降伏五蓋時，行者的心境便能恢復如澄澈、無風的水面，進而照見生命的真實面貌。</p>
           </div>`
       },
       "四聖諦總說": {
