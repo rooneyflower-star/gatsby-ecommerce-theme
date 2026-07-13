@@ -139,7 +139,7 @@
                 四不壞淨
                 <i data-lucide="play-circle" class="w-4 h-4"></i>
               </button>
-              <button onclick="openModal('六念')" class="flex-1 w-full hover:bg-red-100 transition-all text-red-800 font-bold flex items-center justify-center text-sm gap-1">
+              <button onclick="openModal('六念')" class="flex-1 w-full hover:bg-red-100 transition-all text-red-800 font-bold flex items-center justify-center text-sm gap-1 border-t border-red-200">
                 六念
                 <i data-lucide="play-circle" class="w-3 h-3"></i>
               </button>
@@ -230,7 +230,7 @@
             </div>
             <!-- 點擊按鈕 (紫色系，雙行獨立點選設計) -->
             <div class="pointer-events-auto mt-3 bg-indigo-50 border-[3px] border-indigo-400 shadow-md rounded-xl overflow-hidden flex flex-col hover:border-indigo-500 hover:scale-105 transition-all">
-              <button onclick="openModal('止觀雙修')" class="px-6 py-2 pb-1.5 text-indigo-900 text-sm font-bold hover:bg-indigo-100 transition-colors flex items-center justify-center gap-1.5 tracking-wider">
+              <button onclick="openModal('止觀雙修')" class="px-6 py-2 pb-1.5 text-indigo-900 text-sm font-bold hover:bg-indigo-100 transition-colors flex items-center justify-center tracking-wider">
                 止觀雙修
               </button>
               <button onclick="openModal('五蓋')" class="px-6 py-1.5 pt-1 text-xs text-slate-500 font-bold hover:bg-indigo-100 hover:text-indigo-800 transition-colors tracking-normal flex items-center justify-center">
@@ -340,7 +340,7 @@
         療癒系佛法繪本影片
       </h2>
       
-      <!-- 影片列表：動態 Grid 佈局 -->
+      <!-- 影片列表：動態 Grid 佈局 (9 支影片剛好 3x3 九宮格) -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- 影片 1: 四聖諦篇 -->
@@ -504,14 +504,14 @@
            <p class="text-slate-500 text-sm">了解四不壞淨如何成為生命中最堅固的防護罩，並學習六念法門，在風浪中找回內心的平靜。</p>
         </div>
 
-        <!-- 影片 8: 四念處與四正勤篇 -->
+        <!-- 影片 8: 四念處篇 -->
         <div class="space-y-3 group">
            <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100">
              <iframe 
                width="100%" 
                height="100%" 
                src="https://www.youtube.com/embed/EQjXvgt5OOA" 
-               title="療癒系佛法繪本-四念處與四正勤篇" 
+               title="療癒系佛法繪本-四念處與四顛倒篇" 
                frameborder="0" 
                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                referrerpolicy="strict-origin-when-cross-origin"
@@ -522,9 +522,32 @@
              </iframe>
            </div>
            <h3 class="font-bold text-lg text-slate-700 group-hover:text-indigo-600 transition-colors">
-             療癒系佛法繪本 - 四念處與四正勤
+             療癒系佛法繪本 - 四念處篇
            </h3>
-           <p class="text-slate-500 text-sm">學習如何透過四念處的覺察打破四顛倒的錯覺，並運用四正勤的精進動力，在生活中落實止觀雙修。</p>
+           <p class="text-slate-500 text-sm">學習如何透過四念處的覺察，打破四顛倒的錯覺，在生活中落實智慧的觀察。</p>
+        </div>
+
+        <!-- 影片 9: 四正勤篇 (新增) -->
+        <div class="space-y-3 group">
+           <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100">
+             <iframe 
+               width="100%" 
+               height="100%" 
+               src="https://www.youtube.com/embed/RqWhPhhP8eY" 
+               title="療癒系佛法繪本-四正勤篇" 
+               frameborder="0" 
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+               referrerpolicy="strict-origin-when-cross-origin"
+               allowfullscreen
+               loading="lazy"
+               class="w-full h-full"
+             >
+             </iframe>
+           </div>
+           <h3 class="font-bold text-lg text-slate-700 group-hover:text-indigo-600 transition-colors">
+             療癒系佛法繪本 - 四正勤篇
+           </h3>
+           <p class="text-slate-500 text-sm">了解如何培養四正勤的精進動力，斷惡修善，為修行注入源源不絕的能量。</p>
         </div>
 
       </div>
@@ -771,11 +794,11 @@
             <a href="https://youtu.be/EQjXvgt5OOA" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-4 rounded-xl bg-orange-50 border border-orange-100 hover:bg-orange-100 transition-colors group mt-4">
               <div class="flex items-center gap-2 text-orange-700 font-bold">
                 <i data-lucide="youtube" class="w-6 h-6 text-red-600"></i>
-                <span>療癒系佛法繪本：四念處與四正勤</span>
+                <span>療癒系佛法繪本：四念處篇</span>
                 <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
               </div>
               <p class="text-sm text-orange-800/80 pl-8">
-                觀看影片：學習如何在生活中實踐身、受、心、法的觀察，並結合四正勤的動力。
+                觀看影片：學習如何在生活中實踐身、受、心、法的觀察，透過覺察打破顛倒錯覺。
               </p>
             </a>
           </div>`
@@ -790,7 +813,7 @@
             <a href="https://youtu.be/EQjXvgt5OOA" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-4 rounded-xl bg-orange-50 border border-orange-100 hover:bg-orange-100 transition-colors group mt-4">
               <div class="flex items-center gap-2 text-orange-700 font-bold">
                 <i data-lucide="youtube" class="w-6 h-6 text-red-600"></i>
-                <span>療癒系佛法繪本：四念處與四正勤</span>
+                <span>療癒系佛法繪本：四念處篇</span>
                 <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
               </div>
               <p class="text-sm text-orange-800/80 pl-8">
@@ -805,14 +828,14 @@
           <div class="space-y-3">
             <p>四種正確的努力方向：已生惡令斷、未生惡令不生、未生善令生、已生善令增長。</p>
             
-            <a href="https://youtu.be/EQjXvgt5OOA" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-4 rounded-xl bg-emerald-50 border border-emerald-100 hover:bg-emerald-100 transition-colors group mt-4">
+            <a href="https://youtu.be/RqWhPhhP8eY" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 p-4 rounded-xl bg-emerald-50 border border-emerald-100 hover:bg-emerald-100 transition-colors group mt-4">
               <div class="flex items-center gap-2 text-emerald-700 font-bold">
                 <i data-lucide="youtube" class="w-6 h-6 text-red-600"></i>
-                <span>療癒系佛法繪本：四念處與四正勤</span>
+                <span>療癒系佛法繪本：四正勤篇</span>
                 <i data-lucide="external-link" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
               </div>
               <p class="text-sm text-emerald-800/80 pl-8">
-                觀看影片：了解如何將四正勤的動力，應用在四念處的覺察之中，斷惡修善。
+                觀看影片：了解如何培養四正勤的精進動力，斷惡修善，為修行注入源源不絕的能量。
               </p>
             </a>
           </div>`
